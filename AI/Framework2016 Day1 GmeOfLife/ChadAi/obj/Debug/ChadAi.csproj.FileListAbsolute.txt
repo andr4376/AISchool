@@ -8,3 +8,13 @@ C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\ob
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\obj\Debug\ChadAi.dll
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\obj\Debug\ChadAi.pdb
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\bin\Debug\Icon.png
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\bin\Debug\Icon.png
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\bin\Debug\ChadAi.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\bin\Debug\ChadAi.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\bin\Debug\AIFramework.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\bin\Debug\AIFramework.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\obj\Debug\ChadAi.csprojAssemblyReference.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\obj\Debug\ChadAi.csproj.CoreCompileInputs.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\obj\Debug\ChadAi.csproj.CopyComplete
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\obj\Debug\ChadAi.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ChadAi\obj\Debug\ChadAi.pdb

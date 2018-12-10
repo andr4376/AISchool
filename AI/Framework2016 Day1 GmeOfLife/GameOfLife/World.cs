@@ -412,16 +412,16 @@ namespace GameOfLife
 
 
         }
-        private bool DoAction(Agent a, TimeSpan gameTime)
+        private bool DoAction(Agent agent, TimeSpan gameTime)
         {
 
-            PropertyProvider p = pproviders[a.Id.ToString()];
+            PropertyProvider p = pproviders[agent.Id.ToString()];
             p.Defending = false;
             bool status = false;
 
 
-            List<IEntity> sightEntities = entities.FindAll(e => AIVector.Distance(p.Position, e.Position) <= a.Eyesight);
-            IAction action = a.GetNextAction(sightEntities);
+            List<IEntity> sightEntities = entities.FindAll(e => AIVector.Distance(p.Position, e.Position) <= agent.Eyesight);
+            IAction action = agent.GetNextAction(sightEntities);
             switch (action.GetType().Name)
             {
                 case "Attack":
@@ -490,20 +490,23 @@ namespace GameOfLife
                     break;
                 case "Procreate":
                     {
-                        Procreate pc = (Procreate)action;
-                        if (pc.Mate != null)
+                        Procreate procreation = (Procreate)action;
+                        if (procreation.Mate != null)
                         {
-                            PropertyProvider pMate = pproviders[pc.Mate.Id.ToString()];
+                            PropertyProvider pMate = pproviders[procreation.Mate.Id.ToString()];
+
                             //Both agents should be ready to procreate and within distance
-                            if (a != pc.Mate && a.GetType() == pc.Mate.GetType() && p.ProcreationCountDown <= 0 && pMate.ProcreationCountDown <= 0 && AIVector.Distance(p.Position, pMate.Position) <= AIModifiers.maxProcreateRange)
+                            if (agent != procreation.Mate && agent.GetType() == procreation.Mate.GetType() 
+                                && p.ProcreationCountDown <= 0 && pMate.ProcreationCountDown <= 0 && AIVector.Distance(p.Position, pMate.Position) 
+                                <= AIModifiers.maxProcreateRange)
                             {
                                 //A random parent factory is chosen
                                 Random rnd = new Random();
 
-                                string randomParentType = rnd.Next(2) == 0 ? a.EntityType : pc.Mate.EntityType;
-                                foreach (AgentFactory f in factories)
+                                string randomParentType = rnd.Next(2) == 0 ? agent.EntityType : procreation.Mate.EntityType;
+                                foreach (AgentFactory factory in factories)
                                 {
-                                    if (f.ProvidedAgentTypeName == randomParentType)
+                                    if (factory.ProvidedAgentTypeName == randomParentType)
                                     {
                                         p.ProcreationCountDown = 100;
 
@@ -512,13 +515,13 @@ namespace GameOfLife
 
                                         PropertyProvider pNew = new PropertyProvider();
                                         pproviders.Add(pNew.Id.ToString(), pNew);
-                                        Agent newAgent = f.CreateAgent(a, pc.Mate, pNew);
+                                        Agent newAgent = factory.CreateAgent(agent, procreation.Mate, pNew);
                                         if (newAgent.Invarient())
                                         {
                                             pNew.Hitpoints = newAgent.Health;
                                             pNew.Hunger = 0;
                                             pNew.ProcreationCountDown = AIModifiers.initialProcreationCount;
-                                            pNew.Position = new AIVector(a.Position.X, a.Position.Y);
+                                            pNew.Position = new AIVector(agent.Position.X, agent.Position.Y);
                                             toBeAdded.Add(newAgent);
                                             status = true;
                                         }
@@ -539,7 +542,7 @@ namespace GameOfLife
                         Feed f = (Feed)action;
                         if (f.FoodSource != null)
                         {
-                            if (AIVector.Distance(a.Position, f.FoodSource.Position) <= AIModifiers.maxFeedingRange)
+                            if (AIVector.Distance(agent.Position, f.FoodSource.Position) <= AIModifiers.maxFeedingRange)
                             {
                                 int removed = entities.RemoveAll(x => x.Id.ToString() == f.FoodSource.Id.ToString());
                               
@@ -567,7 +570,7 @@ namespace GameOfLife
 
             if (status)
             {
-                effects.Add(new VisualEffect(a, action));
+                effects.Add(new VisualEffect(agent, action));
             }
 
             return status;

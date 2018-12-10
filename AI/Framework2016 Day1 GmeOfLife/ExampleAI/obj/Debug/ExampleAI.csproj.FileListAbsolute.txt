@@ -90,3 +90,13 @@ C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\obj\Debug\ExampleAI.csproj.CopyComplete
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\obj\Debug\ExampleAI.dll
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\obj\Debug\ExampleAI.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\bin\Debug\Icon.png
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\bin\Debug\ExampleAI.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\bin\Debug\ExampleAI.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\bin\Debug\AIFramework.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\bin\Debug\AIFramework.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\obj\Debug\ExampleAI.csprojAssemblyReference.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\obj\Debug\ExampleAI.csproj.CoreCompileInputs.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\obj\Debug\ExampleAI.csproj.CopyComplete
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\obj\Debug\ExampleAI.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ExampleAI\obj\Debug\ExampleAI.pdb
