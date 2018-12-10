@@ -47,3 +47,9 @@ C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\
 C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\AIFramework\obj\Debug\AIFramework.csproj.CoreCompileInputs.cache
 C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\AIFramework\obj\Debug\AIFramework.dll
 C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\AIFramework\obj\Debug\AIFramework.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\bin\Debug\AIFramework.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\bin\Debug\AIFramework.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.csprojAssemblyReference.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.csproj.CoreCompileInputs.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.pdb

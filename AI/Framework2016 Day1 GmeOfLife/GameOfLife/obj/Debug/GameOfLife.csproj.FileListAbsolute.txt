@@ -153,3 +153,19 @@ C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\
 C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\GameOfLife\obj\Debug\GameOfLife.csproj.CopyComplete
 C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\GameOfLife\obj\Debug\GameOfLife.exe
 C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\GameOfLife\obj\Debug\GameOfLife.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\bin\Debug\Plant.png
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\bin\Debug\GameOfLife.exe.config
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\bin\Debug\GameOfLife.exe
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\bin\Debug\GameOfLife.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\bin\Debug\AIFramework.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\bin\Debug\ReflectionChecker.dll
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\bin\Debug\AIFramework.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\bin\Debug\ReflectionChecker.pdb
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\obj\Debug\GameOfLife.csprojAssemblyReference.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\obj\Debug\GameOfLife.Form1.resources
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\obj\Debug\GameOfLife.Properties.Resources.resources
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.GenerateResource.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.CoreCompileInputs.cache
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.CopyComplete
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\obj\Debug\GameOfLife.exe
+D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\GameOfLife\obj\Debug\GameOfLife.pdb
