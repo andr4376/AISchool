@@ -1,0 +1,82 @@
+C:\Users\PalleRosendahl\Desktop\dsafsadf\ExampleAI\bin\Debug\Icon.png
+C:\Users\PalleRosendahl\Desktop\dsafsadf\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Users\PalleRosendahl\Desktop\dsafsadf\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Users\PalleRosendahl\Desktop\dsafsadf\ExampleAI\bin\Debug\AIFramework.dll
+C:\Users\PalleRosendahl\Desktop\dsafsadf\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Users\PalleRosendahl\Desktop\dsafsadf\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\Users\PalleRosendahl\Desktop\dsafsadf\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Users\PalleRosendahl\Desktop\dsafsadf\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\Users\Kenneth Andersen\Desktop\Framework\ExampleAI\bin\Debug\Icon.png
+C:\Users\Kenneth Andersen\Desktop\Framework\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Users\Kenneth Andersen\Desktop\Framework\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Users\Kenneth Andersen\Desktop\Framework\ExampleAI\bin\Debug\AIFramework.dll
+C:\Users\Kenneth Andersen\Desktop\Framework\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Users\Kenneth Andersen\Desktop\Framework\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\Users\Kenneth Andersen\Desktop\Framework\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Users\Kenneth Andersen\Desktop\Framework\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\Users\PalleRosendahl\Desktop\UpdatedFramework\Framework\ExampleAI\bin\Debug\Icon.png
+C:\Users\PalleRosendahl\Desktop\UpdatedFramework\Framework\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Users\PalleRosendahl\Desktop\UpdatedFramework\Framework\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Users\PalleRosendahl\Desktop\UpdatedFramework\Framework\ExampleAI\bin\Debug\AIFramework.dll
+C:\Users\PalleRosendahl\Desktop\UpdatedFramework\Framework\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Users\PalleRosendahl\Desktop\UpdatedFramework\Framework\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\Users\PalleRosendahl\Desktop\UpdatedFramework\Framework\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Users\PalleRosendahl\Desktop\UpdatedFramework\Framework\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection\ExampleAI\bin\Debug\Icon.png
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection\ExampleAI\bin\Debug\AIFramework.dll
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection2015\ExampleAI\bin\Debug\Icon.png
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection2015\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection2015\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection2015\ExampleAI\bin\Debug\AIFramework.dll
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection2015\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection2015\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection2015\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Users\PalleRosendahl\Dropbox\Spda-fælles\GameWise\F2015\Datamatiker\Kunstig intelligens\UpdatedFrameworkNameSpaceProtection2015\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\Users\palle\Desktop\UpdatedFrameworkNameSpaceProtection2015\UpdatedFrameworkNameSpaceProtection2015WithStateAndModel\dd\ExampleAI\bin\Debug\Icon.png
+C:\Users\palle\Desktop\UpdatedFrameworkNameSpaceProtection2015\UpdatedFrameworkNameSpaceProtection2015WithStateAndModel\dd\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Users\palle\Desktop\UpdatedFrameworkNameSpaceProtection2015\UpdatedFrameworkNameSpaceProtection2015WithStateAndModel\dd\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Users\palle\Desktop\UpdatedFrameworkNameSpaceProtection2015\UpdatedFrameworkNameSpaceProtection2015WithStateAndModel\dd\ExampleAI\bin\Debug\AIFramework.dll
+C:\Users\palle\Desktop\UpdatedFrameworkNameSpaceProtection2015\UpdatedFrameworkNameSpaceProtection2015WithStateAndModel\dd\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Users\palle\Desktop\UpdatedFrameworkNameSpaceProtection2015\UpdatedFrameworkNameSpaceProtection2015WithStateAndModel\dd\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\Users\palle\Desktop\UpdatedFrameworkNameSpaceProtection2015\UpdatedFrameworkNameSpaceProtection2015WithStateAndModel\dd\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Users\palle\Desktop\UpdatedFrameworkNameSpaceProtection2015\UpdatedFrameworkNameSpaceProtection2015WithStateAndModel\dd\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\Users\palle\Desktop\aaasdd\ss\ExampleAI\bin\Debug\Icon.png
+C:\Users\palle\Desktop\aaasdd\ss\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Users\palle\Desktop\aaasdd\ss\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Users\palle\Desktop\aaasdd\ss\ExampleAI\bin\Debug\AIFramework.dll
+C:\Users\palle\Desktop\aaasdd\ss\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Users\palle\Desktop\aaasdd\ss\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\Users\palle\Desktop\aaasdd\ss\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Users\palle\Desktop\aaasdd\ss\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\Users\palle\Desktop\aaasdd\UpdatedFrameworkNameSpaceProtection2015WithGoalBased\ExampleAI\bin\Debug\Icon.png
+C:\Users\palle\Desktop\aaasdd\UpdatedFrameworkNameSpaceProtection2015WithGoalBased\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Users\palle\Desktop\aaasdd\UpdatedFrameworkNameSpaceProtection2015WithGoalBased\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Users\palle\Desktop\aaasdd\UpdatedFrameworkNameSpaceProtection2015WithGoalBased\ExampleAI\bin\Debug\AIFramework.dll
+C:\Users\palle\Desktop\aaasdd\UpdatedFrameworkNameSpaceProtection2015WithGoalBased\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Users\palle\Desktop\aaasdd\UpdatedFrameworkNameSpaceProtection2015WithGoalBased\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\Users\palle\Desktop\aaasdd\UpdatedFrameworkNameSpaceProtection2015WithGoalBased\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Users\palle\Desktop\aaasdd\UpdatedFrameworkNameSpaceProtection2015WithGoalBased\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\tmp\New folder\UpdatedFrameworkNameSpaceProtection2016\ExampleAI\bin\Debug\Icon.png
+C:\tmp\New folder\UpdatedFrameworkNameSpaceProtection2016\ExampleAI\bin\Debug\ExampleAI.dll
+C:\tmp\New folder\UpdatedFrameworkNameSpaceProtection2016\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\tmp\New folder\UpdatedFrameworkNameSpaceProtection2016\ExampleAI\bin\Debug\AIFramework.dll
+C:\tmp\New folder\UpdatedFrameworkNameSpaceProtection2016\ExampleAI\bin\Debug\AIFramework.pdb
+C:\tmp\New folder\UpdatedFrameworkNameSpaceProtection2016\ExampleAI\obj\Debug\ExampleAI.csprojResolveAssemblyReference.cache
+C:\tmp\New folder\UpdatedFrameworkNameSpaceProtection2016\ExampleAI\obj\Debug\ExampleAI.dll
+C:\tmp\New folder\UpdatedFrameworkNameSpaceProtection2016\ExampleAI\obj\Debug\ExampleAI.pdb
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\bin\Debug\Icon.png
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\bin\Debug\ExampleAI.dll
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\bin\Debug\ExampleAI.pdb
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\bin\Debug\AIFramework.dll
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\bin\Debug\AIFramework.pdb
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\obj\Debug\ExampleAI.csprojAssemblyReference.cache
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\obj\Debug\ExampleAI.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\obj\Debug\ExampleAI.csproj.CopyComplete
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\obj\Debug\ExampleAI.dll
+C:\Dropbox\Dropbox\Arbejde\3. Semester\Master classes\Kunstig Intelligens\Filer\1. Lektion\Framework2016\ExampleAI\obj\Debug\ExampleAI.pdb
