@@ -44,3 +44,9 @@ D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\obj\
 D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\obj\Debug\ReflectionChecker.csproj.CoreCompileInputs.cache
 D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\obj\Debug\ReflectionChecker.dll
 D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\obj\Debug\ReflectionChecker.pdb
+C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\bin\Debug\ReflectionChecker.dll
+C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\bin\Debug\ReflectionChecker.pdb
+C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\obj\Debug\ReflectionChecker.csprojAssemblyReference.cache
+C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\obj\Debug\ReflectionChecker.csproj.CoreCompileInputs.cache
+C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\obj\Debug\ReflectionChecker.dll
+C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\ReflectionChecker\obj\Debug\ReflectionChecker.pdb
