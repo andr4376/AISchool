@@ -85,7 +85,6 @@ namespace ChadAi
                     closestChad != this)
                 {
                     Console.WriteLine("Procreate");
-                    RememberLocation();
 
 
                     return new Procreate(nearChadsInProcreationRange[0]);
@@ -110,7 +109,6 @@ namespace ChadAi
                         closestEnemy = agent;
                     }
                 }
-                RememberLocation();
 
 
                 return new Attack(closestEnemy);
@@ -123,10 +121,12 @@ namespace ChadAi
 
             if (nearbyPlantsInRange.Count > 0)
             {
-                RememberLocation();
+                if ((this as Agent).Hunger > 20)
+                {
+                    return new Feed(nearbyPlantsInRange[0]);
+                }
 
 
-                return new Feed(nearbyPlantsInRange[0]);
             }
 
 
@@ -147,7 +147,7 @@ namespace ChadAi
                 List<Agent> nearEnemiesOutOfRange = agents.FindAll(otherAgent => otherAgent.GetType() != typeof(Chad)
                 && otherAgent is Agent && AIVector.Distance(Position, otherAgent.Position) > AIModifiers.maxMeleeAttackRange);
 
-                if (nearEnemiesOutOfRange.Count > 0)
+                if (nearEnemiesOutOfRange.Count > 0 && (this as Agent).ProcreationCountDown>0)
                 {
                     moveX = nearEnemiesOutOfRange[0].Position.X - Position.X;
                     moveY = nearEnemiesOutOfRange[0].Position.Y - Position.Y;
@@ -157,11 +157,12 @@ namespace ChadAi
                 }
             }
 
-            //find target to attack
+
+            //find flower to eat
+
             if ((this as Agent).Hunger > 30)
             {
 
-                //find flower to eat
                 List<Plant> nearbyPlantsOutOfRange = plantsInOtherEntities.FindAll(plant => plant
             is Plant && AIVector.Distance(Position, plant.Position) > AIModifiers.maxFeedingRange);
 
@@ -187,7 +188,6 @@ namespace ChadAi
 
                     if ((this as Agent).Hunger > 80)
                     {
-                        RememberLocation();
 
 
                         return new Move(direction);
@@ -226,66 +226,70 @@ namespace ChadAi
 
                     direction = new AIVector(moveX, moveY);
 
-                    RememberLocation();
 
                     return new Move(direction);
                 }
             }
 
-            if (previousPositions.Count == 10)
-            {
+           
 
-                if (Position == previousPositions[0])
-                {
-                    direction *= -1;
-
-                    if (direction == new AIVector(0, 0))
-                    {
-                        direction.X = rnd.Next(-1, 2);
-                        direction.Y = rnd.Next(-1, 2);
-
-                    }
-                }
-            }
-
-
-            //if (lastPos.X == Position.X)
-            //{
-            //    direction.X = direction.X * -1;
-
-            //}
-            //if (lastPos.Y == Position.Y)
-            //{
-            //    direction.Y = direction.Y * -1;
-            //}
 
             if (actionCount > 700)
             {
+
                 direction.X = rnd.Next(-1, 2);
                 direction.Y = rnd.Next(-1, 2);
 
                 actionCount = 0;
             }
 
+            if (Bounce(direction))
+            {
+                actionCount /= 2;
+            }
 
-            RememberLocation();
+
 
             return new Move(direction);
 
         }
 
-        private void RememberLocation()
+        private bool Bounce(AIVector direction)
         {
-            if (!previousPositions.Contains(Position))
+            bool hasBounced = false;
+            //if going to far right
+            if (Position.X >= width - 40 && direction.X > 0)
             {
-                previousPositions.Add(Position);
-
-                if (previousPositions.Count > 10)
-                {
-                    previousPositions.Clear();
-                }
+                direction.X *= -1;
+                return true;
             }
+
+            //to far ´left
+            if (Position.X <= 0 && direction.X < 0)
+            {
+                direction.X *= -1;
+                return true;
+
+            }
+            //down
+            if (Position.Y >= height - 60 && direction.Y > 0)
+            {
+                direction.Y *= -1;
+                return true;
+
+            }
+            //up
+            if (Position.Y <= 0 && direction.Y < 0)
+            {
+                direction.Y *= -1;
+                return true;
+
+            }
+
+            return hasBounced;
         }
+
+
 
 
 
