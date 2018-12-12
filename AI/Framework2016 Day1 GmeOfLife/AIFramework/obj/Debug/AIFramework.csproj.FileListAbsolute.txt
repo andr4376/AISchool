@@ -55,7 +55,6 @@ D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\
 D:\Code projects\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.pdb
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\bin\Debug\AIFramework.dll
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\bin\Debug\AIFramework.pdb
-C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.csprojAssemblyReference.cache
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.csproj.CoreCompileInputs.cache
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.dll
 C:\Users\Andr4\Desktop\Coding\AISchool\AI\Framework2016 Day1 GmeOfLife\AIFramework\obj\Debug\AIFramework.pdb

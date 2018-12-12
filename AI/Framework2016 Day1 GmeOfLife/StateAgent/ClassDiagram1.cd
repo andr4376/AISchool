@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="StateAgent.States.AgentStates.Born">
+    <Position X="0.5" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAQAAAAAAAAAAAAEAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>States\AgentStates\Born.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StateAgent.States.AgentStates.Mature">
+    <Position X="7" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAQAAAAAAAAAAAAEAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>States\AgentStates\Mature.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StateAgent.States.AgentStates.NotReadyToMate">
+    <Position X="3.75" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAQAAAAAAAAAAAAEAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>States\AgentStates\NotReadyToMate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StateAgent.States.AgentStates.Scared">
+    <Position X="10.25" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAQAAAAAAAAAAAAEAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>States\AgentStates\Scared.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="StateAgent.States.FSM&lt;T&gt;">
+    <Position X="5" Y="9" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAJAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>States\FSM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StateAgent.StateBasedAgent">
+    <Position X="0.5" Y="9" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAIAAgBAAAoAAAAIAIAAAAAAA=</HashCode>
+      <FileName>StateBasedAgent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="StateAgent.States.IState&lt;T&gt;">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>States\IState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

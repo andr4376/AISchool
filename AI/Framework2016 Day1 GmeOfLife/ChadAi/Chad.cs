@@ -14,20 +14,20 @@ namespace ChadAi
     {
         Random rnd;
 
-        int height = 618;
-        int width = 1028;
+        AIVector lastPosition = new AIVector(0, 0);
 
         List<AIVector> previousPositions = new List<AIVector>();
 
         AIVector lastPos = new AIVector(0, 0);
 
-        int actionCount = 0;
+        int actionCount, rememberPositionCount = 0;
 
         //Only for randomization of movement
         float moveX = 0;
         float moveY = 0;
 
         AIVector direction = new AIVector(0, 0);
+        private int waitTime = 200;
 
         public Chad(IPropertyStorage propertyStorage)
             : base(propertyStorage)
@@ -86,7 +86,7 @@ namespace ChadAi
                 {
                     Console.WriteLine("Procreate");
 
-
+                    RememberPosition();
                     return new Procreate(nearChadsInProcreationRange[0]);
                 }
 
@@ -110,6 +110,7 @@ namespace ChadAi
                     }
                 }
 
+                RememberPosition();
 
                 return new Attack(closestEnemy);
 
@@ -123,6 +124,7 @@ namespace ChadAi
             {
                 if ((this as Agent).Hunger > 20)
                 {
+                    RememberPosition();
                     return new Feed(nearbyPlantsInRange[0]);
                 }
 
@@ -176,6 +178,7 @@ namespace ChadAi
                         moveY = Position.Y - closestAgent.Position.Y;
 
                         direction = new AIVector(moveX, moveY);
+                        RememberPosition();
 
                         return new Move(direction);
                     }
@@ -214,6 +217,7 @@ namespace ChadAi
                     if ((this as Agent).Hunger > 80)
                     {
 
+                        RememberPosition();
 
                         return new Move(direction);
                     }
@@ -251,6 +255,7 @@ namespace ChadAi
 
                     direction = new AIVector(moveX, moveY);
 
+                    RememberPosition();
 
                     return new Move(direction);
                 }
@@ -259,55 +264,67 @@ namespace ChadAi
 
 
 
-            if (actionCount > 700)
+            if (actionCount > waitTime)
             {
+                waitTime = rnd.Next(50, 500);
 
                 direction.X = rnd.Next(-1, 2);
                 direction.Y = rnd.Next(-1, 2);
 
+                while (direction.X == 0 && direction.Y == 0)
+                {
+                    direction.X = rnd.Next(-1, 2);
+                    direction.Y = rnd.Next(-1, 2);
+                }
+
                 actionCount = 0;
             }
 
-            if (Bounce(direction))
-            {
-                actionCount /= 2;
-            }
+            //if (Bounce())
+            //{
+            //    //  actionCount /= 2;
+            //}
 
 
+            RememberPosition();
 
             return new Move(direction);
 
         }
 
-        private bool Bounce(AIVector direction)
+        private bool Bounce()
         {
             bool hasBounced = false;
-            //if going to far right
-            if (Position.X >= width - 40 && direction.X > 0)
-            {
-                direction.X *= -1;
-                return true;
-            }
 
-            //to far ´left
-            if (Position.X <= 0 && direction.X < 0)
+            if (rememberPositionCount > 0)
             {
-                direction.X *= -1;
-                return true;
 
-            }
-            //down
-            if (Position.Y >= height - 60 && direction.Y > 0)
-            {
-                direction.Y *= -1;
-                return true;
 
-            }
-            //up
-            if (Position.Y <= 0 && direction.Y < 0)
-            {
-                direction.Y *= -1;
-                return true;
+                //to far ´left
+                if (Position.X == lastPos.X)
+                {
+                    direction.X *= -1;
+
+                    while (direction.X == 0 && direction.Y == 0)
+                    {
+                        direction.X = rnd.Next(-1, 2);
+                    }
+
+                    return true;
+
+                }
+                //down
+                if (Position.Y == lastPos.Y)
+                {
+                    direction.Y *= -1;
+
+                    while (direction.X == 0 && direction.Y == 0)
+                    {
+                        direction.Y = rnd.Next(-1, 2);
+                    }
+                    return true;
+
+                }
 
             }
 
@@ -315,7 +332,17 @@ namespace ChadAi
         }
 
 
+        private void RememberPosition()
+        {
+            if (rememberPositionCount == 100)
+            {
+                lastPos = Position;
+                rememberPositionCount = 0;
 
+            }
+
+            rememberPositionCount++;
+        }
 
 
 
