@@ -147,13 +147,38 @@ namespace ChadAi
                 List<Agent> nearEnemiesOutOfRange = agents.FindAll(otherAgent => otherAgent.GetType() != typeof(Chad)
                 && otherAgent is Agent && AIVector.Distance(Position, otherAgent.Position) > AIModifiers.maxMeleeAttackRange);
 
-                if (nearEnemiesOutOfRange.Count > 0 && (this as Agent).ProcreationCountDown>0)
+                if (nearEnemiesOutOfRange.Count > 0)
                 {
-                    moveX = nearEnemiesOutOfRange[0].Position.X - Position.X;
-                    moveY = nearEnemiesOutOfRange[0].Position.Y - Position.Y;
 
-                    direction = new AIVector(moveX, moveY);
+                    Agent closestAgent = nearEnemiesOutOfRange[0];
 
+                    foreach (Agent agent in nearEnemiesOutOfRange)
+                    {
+                        if (AIVector.Distance(Position, agent.Position) <
+                            AIVector.Distance(Position, closestAgent.Position))
+                        {
+                            closestAgent = agent;
+                        }
+                    }
+
+
+                    if (closestAgent != null && ProcreationCountDown > 0 && Health > 5)
+                    {
+                        moveX = closestAgent.Position.X - Position.X;
+                        moveY = closestAgent.Position.Y - Position.Y;
+
+                        direction = new AIVector(moveX, moveY);
+
+                    }
+                    else if (closestAgent != null && Health < 5 && nearEnemiesOutOfRange.Count > 0)
+                    {
+                        moveX = Position.X - closestAgent.Position.X;
+                        moveY = Position.Y - closestAgent.Position.Y;
+
+                        direction = new AIVector(moveX, moveY);
+
+                        return new Move(direction);
+                    }
                 }
             }
 
@@ -231,7 +256,7 @@ namespace ChadAi
                 }
             }
 
-           
+
 
 
             if (actionCount > 700)
