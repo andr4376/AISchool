@@ -12,11 +12,11 @@ namespace ChadAi
 {
     public class Chad : Agent
     {
+        int chadCount = 0;
+
         Random rnd;
 
         AIVector lastPosition = new AIVector(0, 0);
-
-        List<AIVector> previousPositions = new List<AIVector>();
 
         AIVector lastPos = new AIVector(0, 0);
 
@@ -25,6 +25,8 @@ namespace ChadAi
             get { return lastPos; }
             set { lastPos = value; }
         }
+
+        public List<Plant> plantS = new List<Plant>();
 
         int actionCount, rememberPositionCount = 0;
 
@@ -39,14 +41,29 @@ namespace ChadAi
             : base(propertyStorage)
         {
             rnd = new Random();
-            MovementSpeed = 144;
-            Strength = 35;
-            Health = 36;
-            Eyesight = 35;
-            Endurance = 0;
+            //MovementSpeed = 144;
+            //Strength = 35;
+            //Health = 36;
+            //Eyesight = 35;
+            //Endurance = 0;
             Dodge = 0;
 
 
+
+            while (MovementSpeed + Strength + Health + Eyesight + Endurance != 250)
+            {
+
+                MovementSpeed = rnd.Next(10, 90);
+                Strength = rnd.Next(10, 90);
+                Health = rnd.Next(10, 90);
+                Eyesight = rnd.Next(10, 90);
+                Endurance = rnd.Next(10, 90);
+
+                Console.WriteLine((MovementSpeed + Strength + Health + Eyesight + Endurance));
+            }
+
+            chadCount++;
+            Console.WriteLine(chadCount);
             moveX = rnd.Next(-1, 2);
             moveY = rnd.Next(-1, 2);
 
@@ -64,6 +81,7 @@ namespace ChadAi
             List<Agent> agents = otherEntities.FindAll(a => a is Agent && a != this).ConvertAll<Agent>(a => (Agent)a);
             List<Plant> plantsInOtherEntities = otherEntities.FindAll(a => a is Plant).ConvertAll<Plant>(a => (Plant)a);
 
+            plantS = new List<Plant>(plantsInOtherEntities);
 
 
             //procreate
@@ -97,6 +115,9 @@ namespace ChadAi
                 }
 
             }
+
+
+
             //attack
             List<Agent> nearEnemiesInMeleeRange = agents.FindAll(otherAgent =>
         otherAgent.GetType() != typeof(Chad)
@@ -139,6 +160,63 @@ namespace ChadAi
 
             }
 
+            //find procreation partner
+            List<Chad> nearChadsOutOfProcreationRange = agents.FindAll(otherAgent => otherAgent.GetType() == typeof(Chad)
+&& otherAgent is Chad && AIVector.Distance(Position, otherAgent.Position) > AIModifiers.maxProcreateRange).ConvertAll<Chad>(a => (Chad)a);
+
+            if (nearChadsOutOfProcreationRange.Count > 0 && ProcreationCountDown <= 5)
+            {
+
+                Chad closestChad = nearChadsOutOfProcreationRange[0];
+
+                foreach (Chad chad in nearChadsOutOfProcreationRange)
+                {
+                    if (AIVector.Distance(Position, chad.Position) <
+                        AIVector.Distance(Position, closestChad.Position) &&
+                        (chad as Agent).ProcreationCountDown <= closestChad.ProcreationCountDown)
+                    {
+                        closestChad = chad;
+                    }
+                }
+
+                if (closestChad.ProcreationCountDown <= 5
+                    && ProcreationCountDown <= 5 &&
+                    closestChad != this)
+                {
+
+
+                    moveX = closestChad.Position.X - Position.X;
+                    moveY = closestChad.Position.Y - Position.Y;
+
+                    direction = new AIVector(moveX, moveY);
+
+                    RememberPosition();
+
+                    return new Move(direction);
+                }
+
+            }
+            //avoid
+            if (nearChadsOutOfProcreationRange.Count > 0 && ProcreationCountDown >= 10)
+            {
+
+                Chad closestChadoutOfRange = nearChadsOutOfProcreationRange[0];
+
+                foreach (Chad chad in nearChadsOutOfProcreationRange)
+                {
+                    if (AIVector.Distance(Position, chad.Position) <
+                        AIVector.Distance(Position, closestChadoutOfRange.Position))
+
+                    {
+                        closestChadoutOfRange = chad;
+                    }
+
+                    moveX = Position.X - closestChadoutOfRange.Position.X;
+                    moveY = Position.Y - closestChadoutOfRange.Position.Y;
+
+                    direction = new AIVector(moveX, moveY);
+                }
+            }
 
 
 
@@ -157,10 +235,12 @@ namespace ChadAi
                 List<Agent> nearEnemiesOutOfRange = agents.FindAll(otherAgent => otherAgent.GetType() != typeof(Chad)
                 && otherAgent is Agent && AIVector.Distance(Position, otherAgent.Position) > AIModifiers.maxMeleeAttackRange);
 
+
+
                 if (nearEnemiesOutOfRange.Count > 0)
                 {
-
                     Agent closestAgent = nearEnemiesOutOfRange[0];
+
 
                     foreach (Agent agent in nearEnemiesOutOfRange)
                     {
@@ -176,7 +256,7 @@ namespace ChadAi
                     }
 
 
-                    if (closestAgent != null && ProcreationCountDown > 0 && Health > 5)
+                    if (closestAgent != null && ProcreationCountDown > 0 && (Health + Strength) > (closestAgent.Health + closestAgent.Strength))
                     {
                         moveX = closestAgent.Position.X - Position.X;
                         moveY = closestAgent.Position.Y - Position.Y;
@@ -201,8 +281,7 @@ namespace ChadAi
 
 
             //find flower to eat
-
-            if ((this as Agent).Hunger > 30)
+            if (Hunger > 40)
             {
 
                 List<Plant> nearbyPlantsOutOfRange = plantsInOtherEntities.FindAll(plant => plant
@@ -210,6 +289,10 @@ namespace ChadAi
 
                 if (nearbyPlantsOutOfRange.Count > 0)
                 {
+
+                    bool saveForTeam = false;
+
+
 
 
                     Plant closestPlant = nearbyPlantsOutOfRange[0];
@@ -223,12 +306,24 @@ namespace ChadAi
                         }
                     }
 
-                    moveX = closestPlant.Position.X - Position.X;
-                    moveY = closestPlant.Position.Y - Position.Y;
+                    foreach (Chad chad in nearChadsOutOfProcreationRange)
+                    {
+                        if (chad.Hunger > Hunger && chad.plantS.Contains(closestPlant))
+                        {
+                            saveForTeam = true;
+                        }
+                    }
 
-                    direction = new AIVector(moveX, moveY);
+                    if (!saveForTeam)
+                    {
 
-                    if ((this as Agent).Hunger > 80)
+                        moveX = closestPlant.Position.X - Position.X;
+                        moveY = closestPlant.Position.Y - Position.Y;
+
+                        direction = new AIVector(moveX, moveY);
+
+                    }
+                    if (Hunger > 75 && !saveForTeam)
                     {
 
                         RememberPosition();
@@ -239,41 +334,7 @@ namespace ChadAi
 
             }
 
-            //find procreation partner
-            List<Chad> nearChadsOutOfProcreationRange = agents.FindAll(otherAgent => otherAgent.GetType() == typeof(Chad)
-&& otherAgent is Chad && AIVector.Distance(Position, otherAgent.Position) > AIModifiers.maxProcreateRange).ConvertAll<Chad>(a => (Chad)a);
 
-            if (nearChadsOutOfProcreationRange.Count > 0 && ProcreationCountDown <= 0)
-            {
-
-                Chad closestChad = nearChadsOutOfProcreationRange[0];
-
-                foreach (Chad chad in nearChadsOutOfProcreationRange)
-                {
-                    if (AIVector.Distance(Position, chad.Position) <
-                        AIVector.Distance(Position, closestChad.Position) &&
-                        (chad as Agent).ProcreationCountDown <= 0)
-                    {
-                        closestChad = chad;
-                    }
-                }
-
-                if ((closestChad as Agent).ProcreationCountDown <= 0
-                    && (this as Agent).ProcreationCountDown <= 0 &&
-                    closestChad != this)
-                {
-
-
-                    moveX = closestChad.Position.X - Position.X;
-                    moveY = closestChad.Position.Y - Position.Y;
-
-                    direction = new AIVector(moveX, moveY);
-
-                    RememberPosition();
-
-                    return new Move(direction);
-                }
-            }
 
 
 
