@@ -20,6 +20,12 @@ namespace ChadAi
 
         AIVector lastPos = new AIVector(0, 0);
 
+        public AIVector LastPos
+        {
+            get { return lastPos; }
+            set { lastPos = value; }
+        }
+
         int actionCount, rememberPositionCount = 0;
 
         //Only for randomization of movement
@@ -110,9 +116,11 @@ namespace ChadAi
                     }
                 }
 
-                RememberPosition();
 
+                RememberPosition();
                 return new Attack(closestEnemy);
+
+
 
 
             }
@@ -143,7 +151,7 @@ namespace ChadAi
 
 
             //find target to attack
-            if ((this as Agent).Hunger < 80)
+            if (Hunger < 80)
             {
 
                 List<Agent> nearEnemiesOutOfRange = agents.FindAll(otherAgent => otherAgent.GetType() != typeof(Chad)
@@ -159,7 +167,11 @@ namespace ChadAi
                         if (AIVector.Distance(Position, agent.Position) <
                             AIVector.Distance(Position, closestAgent.Position))
                         {
-                            closestAgent = agent;
+                            if ((Health + Strength) > (closestAgent.Health + closestAgent.Strength))
+                            {
+                                closestAgent = agent;
+                            }
+
                         }
                     }
 
@@ -172,7 +184,9 @@ namespace ChadAi
                         direction = new AIVector(moveX, moveY);
 
                     }
-                    else if (closestAgent != null && Health < 5 && nearEnemiesOutOfRange.Count > 0)
+
+                    //Runaway
+                    else if (closestAgent != null && Health < 5 && nearEnemiesOutOfRange.Count > 0 && MovementSpeed >= (closestAgent.MovementSpeed * 0.8f))
                     {
                         moveX = Position.X - closestAgent.Position.X;
                         moveY = Position.Y - closestAgent.Position.Y;
@@ -266,7 +280,7 @@ namespace ChadAi
 
             if (actionCount > waitTime)
             {
-                waitTime = rnd.Next(50, 500);
+                waitTime = rnd.Next(100, 1000);
 
                 direction.X = rnd.Next(-1, 2);
                 direction.Y = rnd.Next(-1, 2);
@@ -285,6 +299,7 @@ namespace ChadAi
             //    //  actionCount /= 2;
             //}
 
+            Bounce();
 
             RememberPosition();
 
@@ -296,25 +311,29 @@ namespace ChadAi
         {
             bool hasBounced = false;
 
-            if (rememberPositionCount > 0)
+            if (LastPos != null && rememberPositionCount > 0)
             {
 
 
                 //to far ´left
                 if (Position.X == lastPos.X)
                 {
-                    direction.X *= -1;
-
-                    while (direction.X == 0 && direction.Y == 0)
+                    if (direction.X != 0)
                     {
-                        direction.X = rnd.Next(-1, 2);
+
+                        direction.X *= -1;
+
+                        while (direction.X == 0 && direction.Y == 0)
+                        {
+                            direction.X = rnd.Next(-1, 2);
+                        }
                     }
 
-                    return true;
+                    hasBounced = true;
 
                 }
                 //down
-                if (Position.Y == lastPos.Y)
+                if (Position.Y == lastPos.Y && direction.Y != 0)
                 {
                     direction.Y *= -1;
 
@@ -322,7 +341,8 @@ namespace ChadAi
                     {
                         direction.Y = rnd.Next(-1, 2);
                     }
-                    return true;
+                    hasBounced = true;
+
 
                 }
 
@@ -334,11 +354,17 @@ namespace ChadAi
 
         private void RememberPosition()
         {
-            if (rememberPositionCount == 100)
+            if (rememberPositionCount >= 10)
             {
-                lastPos = Position;
-                rememberPositionCount = 0;
+                if (LastPos != this.Position)
+                {
 
+
+                    AIVector tmp = new AIVector(Position.X, Position.Y);
+                    LastPos = tmp;
+                    rememberPositionCount = 0;
+
+                }
             }
 
             rememberPositionCount++;
