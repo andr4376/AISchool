@@ -12,9 +12,8 @@ namespace ChadAi
 {
     public class Chad : Agent
     {
-        int chadCount = 0;
-
         Random rnd;
+
 
         AIVector lastPosition = new AIVector(0, 0);
 
@@ -27,6 +26,9 @@ namespace ChadAi
         }
 
         public List<Plant> plantS = new List<Plant>();
+        public List<Chad> chads = new List<Chad>();
+        public List<Agent> enemies = new List<Agent>();
+
 
         int actionCount, rememberPositionCount = 0;
 
@@ -37,33 +39,52 @@ namespace ChadAi
         AIVector direction = new AIVector(0, 0);
         private int waitTime = 200;
 
+
         public Chad(IPropertyStorage propertyStorage)
             : base(propertyStorage)
         {
             rnd = new Random();
-            //MovementSpeed = 144;
-            //Strength = 35;
-            //Health = 36;
-            //Eyesight = 35;
-            //Endurance = 0;
+
+
+
+            MovementSpeed = 70;
+            Strength = 70;
+            Health = 71;
+            Eyesight = 39;
+            Endurance = 0;
             Dodge = 0;
 
 
 
-            while (MovementSpeed + Strength + Health + Eyesight + Endurance != 250)
-            {
 
-                MovementSpeed = rnd.Next(10, 90);
-                Strength = rnd.Next(10, 90);
-                Health = rnd.Next(10, 90);
-                Eyesight = rnd.Next(10, 90);
-                Endurance = rnd.Next(10, 90);
 
-                Console.WriteLine((MovementSpeed + Strength + Health + Eyesight + Endurance));
-            }
 
-            chadCount++;
-            Console.WriteLine(chadCount);
+           
+
+            moveX = rnd.Next(-1, 2);
+            moveY = rnd.Next(-1, 2);
+
+            direction = new AIVector(moveX, moveY);
+
+            string ddd = this.GetType().FullName;
+
+        }
+
+        public Chad(IPropertyStorage propertyStorage, int v) : base(propertyStorage)
+        {
+            rnd = new Random();
+
+
+            MovementSpeed = 174;
+            Strength = 14;
+            Health = 13;
+            Eyesight = 49;
+            Endurance = 0;
+            Dodge = 0;
+
+
+          
+
             moveX = rnd.Next(-1, 2);
             moveY = rnd.Next(-1, 2);
 
@@ -71,8 +92,6 @@ namespace ChadAi
 
             string ddd = this.GetType().FullName;
         }
-
-
 
         public override IAction GetNextAction(List<IEntity> otherEntities)
         {
@@ -82,6 +101,8 @@ namespace ChadAi
             List<Plant> plantsInOtherEntities = otherEntities.FindAll(a => a is Plant).ConvertAll<Plant>(a => (Plant)a);
 
             plantS = new List<Plant>(plantsInOtherEntities);
+            enemies = new List<Agent>(agents.FindAll(enemy => enemy is Agent && enemy.GetType() != this.GetType()));
+            chads = new List<Chad>(agents.FindAll(chad => chad is Chad).ConvertAll<Chad>(a => (Chad)a));
 
 
             //procreate
@@ -137,9 +158,12 @@ namespace ChadAi
                     }
                 }
 
+                if ((closestEnemy.Health + closestEnemy.Strength < Health + Strength) || MovementSpeed < closestEnemy.MovementSpeed || HasBackup(closestEnemy))
+                {
+                    RememberPosition();
+                    return new Attack(closestEnemy);
+                }
 
-                RememberPosition();
-                return new Attack(closestEnemy);
 
 
 
@@ -166,6 +190,7 @@ namespace ChadAi
 
             if (nearChadsOutOfProcreationRange.Count > 0 && ProcreationCountDown <= 5)
             {
+                chads = new List<Chad>(nearChadsOutOfProcreationRange);
 
                 Chad closestChad = nearChadsOutOfProcreationRange[0];
 
@@ -247,7 +272,7 @@ namespace ChadAi
                         if (AIVector.Distance(Position, agent.Position) <
                             AIVector.Distance(Position, closestAgent.Position))
                         {
-                            if ((Health + Strength) > (closestAgent.Health + closestAgent.Strength))
+                            if ((Health + Strength) > (closestAgent.Health + closestAgent.Strength) || HasBackup(closestAgent))
                             {
                                 closestAgent = agent;
                             }
@@ -437,6 +462,20 @@ namespace ChadAi
         public override void ActionResultCallback(bool success)
         {
             //Do nothing - AI dont take success of an action into account
+        }
+
+        private bool HasBackup(Agent enemy)
+        {
+
+            foreach (Chad chad in chads)
+            {
+                if (chad.enemies.Contains(enemy))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
 

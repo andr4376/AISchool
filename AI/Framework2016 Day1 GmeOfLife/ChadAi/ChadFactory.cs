@@ -11,14 +11,53 @@ namespace ChadAi
 {
     public class ChadFactory : AgentFactory
     {
+        int chadCount = 0;
+
+        int fastCount, slowCount = 0;
+
+
         public override Agent CreateAgent(IPropertyStorage propertyStorage)
         {
-            return new Chad(propertyStorage);
+            chadCount++;
+
+            if (chadCount ==1)
+            {
+                slowCount++;
+                Console.WriteLine("Fast: " + fastCount + "  Slow: " + slowCount);
+                return new Chad(propertyStorage);
+
+            }
+            else
+            {
+                fastCount++;
+                Console.WriteLine("Fast: " + fastCount + "  Slow: " + slowCount);
+                chadCount = 0;
+                return new Chad(propertyStorage, 1337);
+
+            }
         }
 
         public override Agent CreateAgent(Agent parent1, Agent parent2, IPropertyStorage propertyStorage)
         {
-            return new Chad(propertyStorage);
+            chadCount++;
+
+            if (chadCount ==1)
+
+            {
+                slowCount++;
+                Console.WriteLine("Fast: " + fastCount + "  Slow: " + slowCount);
+                return new Chad(propertyStorage);
+
+            }
+            else
+            {
+                fastCount++;
+                Console.WriteLine("Fast: " + fastCount + "  Slow: " + slowCount);
+                chadCount = 0;
+                return new Chad(propertyStorage, 1337);
+
+            }
+
         }
 
         public override Type ProvidedAgentType
